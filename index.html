@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Guardar Link</title>
+  <script>
+    const url = decodeURIComponent(window.location.pathname.slice(1));
+
+    if (url.startsWith("http")) {
+      localStorage.setItem("último", url);
+      window.location.href = url;
+    } else {
+      const último = localStorage.getItem("último") || "Nada guardado.";
+      document.write(`<h1>Último guardado:</h1><p>${último}</p>`);
+    }
+  </script>
+</head>
+<body>
+</body>
+</html>
